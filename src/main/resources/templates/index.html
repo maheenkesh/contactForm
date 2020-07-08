@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MK Website</title>
+<link th:replace="/fragments/headLinks">
+</head>
+<body>
+  <div th:replace="/fragments/navbar"></div>
+  <div th:replace="fragments/jumbotron"></div>
+  <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card text-center">
+					<div class="card-header">
+						Featured
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">My One True Love</h5>
+						<img src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2020/04/3b7241e0a88f99a08830325be9bcc1c8.jpg" class="img-fluid" alt="penguins">
+						<p class="card-text">Penguins are my favorite animal. <br> Penguins aren't worried about how this website isn't organized yet.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="container features">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-fluid" src="https://r-cf.bstatic.com/images/hotel/max1024x768/116/116281457.jpg">
+    	    <p>When the roads end, bridges begin.</p>	
+    	</div>
+    	<div class="col-xs-12 col-sm-4">
+    	    <img class="img-fluid" src="https://oceanview4luz.files.wordpress.com/2013/01/sunset-for-front-room-i.jpg">
+    	    <p>Don't go down without a bright.</p>
+    	</div>
+    	<div class="col-xs-12 col-sm-4">
+    	    <img class="img-fluid" src="https://goodfoodpittsburgh.com/wp-content/uploads/2019/07/55887713_2112347028802379_3698186078461624320_n.jpg">
+    	    <p>Branch out sometimes.</p>
+    	</div>
+    </div>
+</div>
+	</div>
+	<div class="card text-center">
+					<div class="card-header">
+						Contact Us
+					</div>
+    <h5>Contact us for any concerns or questions!</h5>
+    <div class="list-group">
+      <div th:each="entry:${entries}">
+        <a th:href="@{/entries/} + ${entry.id}" 
+        class="list-group-item list-group-item-action">
+          <span th:text="${entry.entry}"></span> By: 
+          <span th:text="${entry.emailAddress}"></span>
+        </a>
+    </div>
+    <a th:href="@{/entries/newEntry}">
+      <button class="btn btn-sm btn-primary">New Message</button>
+    </a>
+  </div>
+  </div>
+  <Script th:replace="/fragments/scriptLinks"></Script>
+</body>
+</html>

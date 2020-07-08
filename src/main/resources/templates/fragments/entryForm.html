@@ -1,0 +1,24 @@
+<div th:fragment="entryForm">
+  <table class="table">
+    <tr>
+      <td>First Name</td>
+      <td><input class="form-control" type="text" autofocus
+        th:placeholder="${entry.firstName}" th:field="*{entry.firstName}" /></td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td><input class="form-control" type="text"
+        th:placeholder="${entry.lastName}" th:field="*{entry.lastName}" /></td>
+    </tr>
+     <tr>
+      <td>Email Address</td>
+      <td><input class="form-control" type="text"
+        th:placeholder="${entry.emailAddress}" th:field="*{entry.emailAddress}" /></td>
+    </tr>
+    <tr>
+      <td>Message</td>
+      <td><input class="form-control" style="height: 20em;" type="text"
+        th:placeholder="${entry.entry}" th:field="*{entry.entry}" /></td>
+    </tr>
+  </table>
+</div>

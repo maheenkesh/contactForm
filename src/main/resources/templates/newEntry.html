@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Contact Us</title>
+<link th:replace="/fragments/headLinks">
+</head>
+<body>
+  <div th:replace="/fragments/navbar"></div>
+  <div th:replace="fragments/jumbotron"></div>
+  <div class="container-fluid">
+   <p>Please use the form below to send us a message:</p>
+    <form action="#" th:action="@{/entries}" th:object="${entry}" method="post">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" th:field="*{firstName}" /></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" th:field="*{lastName}" /></td>
+        </tr>
+        <tr>
+          <td>Email Address:</td>
+          <td><input type="text" th:field="*{emailAddress}" /></td>
+        </tr>
+        <tr>
+          <td>Message:</td>
+          <td><input type="text" th:field="*{entry}" /></td>
+        </tr>
+        <tr>
+      		<td>Submit message</td>
+      		<td><button class="btn btn-sm btn-success" type="submit">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <Script th:replace="/fragments/scriptLinks"></Script>
+</body>
+</html>
